@@ -1,9 +1,14 @@
 <h1 align="center">Hi 👋, I'm Mukhtar Sani</h1>
 <h3 align="center">Bringing Innovation to Life with Code and Passion 🔥🚀</h3>
+
 - 👨‍💻 All of my projects are available at [mukhtar.donosync.com](mukhtar.donosync.com)
+
 - 💬 Ask me about **Flutter 📱 Laravel 🌐 Backend Development ⚙️ UI/UX Design 🎨 Firebase 🔥**
+
 - 📫 How to reach me **mukhtaar.abdulkarim@gmail.com**
+
 - 📄 Know about my experiences [mukhtar.donosync.com](mukhtar.donosync.com)
+
 - ⚡ Fun fact **I can spend hours debugging and still consider it a “fun challenge” 🕵️‍♂️💡**
 
 ## 🌐 Socials:
