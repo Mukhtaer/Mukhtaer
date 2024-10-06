@@ -11,7 +11,7 @@
 
 - ⚡ Fun fact **I can spend hours debugging and still consider it a “fun challenge” 🕵️‍♂️💡**
 
-<h3 align="left">Connect with me:</h3>
+# Connect with me:
 <p align="left">
 <a href="https://linkedin.com/in/mukhtarsani" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mukhtarsani" height="30" width="40" /></a>
 </p>
