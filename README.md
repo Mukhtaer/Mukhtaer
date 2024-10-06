@@ -33,7 +33,7 @@
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
 
 ## Support
-<p><a href="https://ko-fi.com/ko-fi.com/mukhtarsani"> <img align="left" src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" height="50" width="210" alt="ko-fi.com/mukhtarsani" /></a></p><br><br>
+<p><a href="https://ko-fi.com/mukhtarsani"> <img align="left" src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" height="50" width="210" alt="mukhtarsani" /></a></p><br><br>
 
 ---
 [![](https://visitcount.itsvg.in/api?id=Mukhtaer&icon=0&color=13)](https://visitcount.itsvg.in)
