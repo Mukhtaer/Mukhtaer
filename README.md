@@ -1,15 +1,15 @@
 <h1 align="center">Hi 👋, I'm Mukhtar Sani</h1>
-<h3 align="center">Bringing Innovation to Life with Code and Passion 🔥🚀</h3>
+<h3 align="center">Transforming Ideas into Scalable Solutions with Code and Passion 🔥🚀</h3>
 
-- 👨‍💻 All of my projects are available at [mukhtar.donosync.com](mukhtar.donosync.com)
+- 👨‍💻 Explore my projects at [https://mukhtar.donosync.com](https://mukhtar.donosync.com)
 
-- 💬 Ask me about **Flutter 📱 Laravel 🌐 Backend Development ⚙️ UI/UX Design 🎨 Firebase 🔥**
+- 💬 Let's talk about **Flutter 📱, Laravel 🌐, Backend Development ⚙️, UI/UX Design 🎨, Firebase 🔥**, and more!
 
-- 📫 How to reach me **mukhtaar.abdulkarim@gmail.com**
+- 📫 Reach me at **mukhtaar.abdulkarim@gmail.com**
 
-- 📄 Know about my experiences [mukhtar.donosync.com](mukhtar.donosync.com)
+- 📄 Learn more about my experience at [https://mukhtar.donosync.com](https://mukhtar.donosync.com)
 
-- ⚡ Fun fact **I can spend hours debugging and still consider it a “fun challenge” 🕵️‍♂️💡**
+- ⚡ Fun fact: **I can spend hours debugging and still call it a "fun challenge" 🕵️‍♂️💡**
 
 # Connect with me:
 <p align="left">
@@ -21,14 +21,6 @@
 ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white)![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
 ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)![GithubPages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white)![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
-
-# 📊 GitHub Stats:
- 
-![](https://github-readme-streak-stats.herokuapp.com/?user=Mukhtaer&theme=radical&hide_border=false)
-
-
-## 🏆 GitHub Trophies
-![](https://github-profile-trophy.vercel.app/?username=Mukhtaer&theme=radical&no-frame=false&no-bg=false&margin-w=4)
 
 ### ✍️ Random Dev Quote
 ![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
