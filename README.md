@@ -1,5 +1,5 @@
-<h1 align="center">Hi 👋, I'm Mukhtar Sani</h1>
-<h3 align="center">Transforming Ideas into Scalable Solutions with Code and Passion 🔥🚀</h3>
+<h1>Hi 👋, I'm Mukhtar Sani</h1>
+<h3>Transforming Ideas into Scalable Solutions with Code and Passion 🔥🚀</h3>
 
 # 💻 Tech Stack:
 
