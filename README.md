@@ -5,7 +5,7 @@ Full-Stack Developer
 
 <h3>Transforming Ideas into Scalable Solutions with Code and Passion 🔥🚀</h3>
 
-- 👨‍💻 Explore my projects at [https://mukhtar.donosync.com](https://mukhtar.donosync.com)
+- 👨‍💻 Explore my projects at [https://mukhtar.donosync.com](https://mukhtarsani.vercel.app)
 
 - 💬 Let's talk about **Flutter 📱, Laravel 🌐, Backend Development ⚙️, UI/UX Design 🎨, Firebase 🔥**, and more!
 
