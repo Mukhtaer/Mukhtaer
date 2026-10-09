@@ -36,10 +36,12 @@ LEVELS = {"NONE": 0, "FIRST_QUARTILE": 1, "SECOND_QUARTILE": 2, "THIRD_QUARTILE"
 THEMES = {
     "dark": {"text": "#E0DEF4", "soft": "#908CAA", "muted": "#6E6A86", "prompt": "#C4A7E7", "accent": "#9CCFD8",
              "panel": "#191724", "chrome": "#1F1D2E", "border": "#2A2739", "track": "#26233A",
-             "levels": ["#26233A", "#4C425E", "#6E5F86", "#9983B6", "#C4A7E7"]},
+             "levels": ["#26233A", "#4C425E", "#6E5F86", "#9983B6", "#C4A7E7"],
+             "groups": {"web": "#9CCFD8", "mobile": "#C4A7E7", "backend": "#EBBCBA", "data": "#F6C177", "delivery": "#EB6F92"}},
     "light": {"text": "#575279", "soft": "#797593", "muted": "#9893A5", "prompt": "#907AA9", "accent": "#286983",
               "panel": "#FAF4ED", "chrome": "#FFFAF3", "border": "#DFDAD9", "track": "#F2E9E1",
-              "levels": ["#F2E9E1", "#DACFD9", "#C5B7CB", "#AB99BA", "#907AA9"]},
+              "levels": ["#F2E9E1", "#DACFD9", "#C5B7CB", "#AB99BA", "#907AA9"],
+              "groups": {"web": "#56949F", "mobile": "#907AA9", "backend": "#D7827E", "data": "#EA9D34", "delivery": "#B4637A"}},
 }
 
 FONT_DIR = Path(__file__).resolve().parent.parent / "assets" / "fonts"
@@ -48,13 +50,14 @@ WIDTH, SIZE, LINE_HEIGHT, PAD, CHAR = 820, 15, 28, 48, 9.0
 TOP, GAP = 108, 14
 CELL, CELL_GAP = 10, 3
 
-STACK = [
-    ("web/", "next.js  react  typescript  tailwind"),
-    ("mobile/", "flutter  dart  firebase"),
-    ("backend/", "laravel  php  python  livewire  rest"),
-    ("data/", "mysql  postgresql"),
-    ("delivery/", "docker  github-actions  linux  nginx"),
-]
+STACK = {
+    "web": ["next.js", "react", "typescript", "tailwind"],
+    "mobile": ["flutter", "dart", "firebase"],
+    "backend": ["laravel", "php", "python", "livewire", "rest"],
+    "data": ["mysql", "postgresql"],
+    "delivery": ["docker", "github-actions", "linux", "nginx"],
+}
+CHIP_SIZE, CHIP_HEIGHT, CHIP_GAP = 13, 24, 8
 
 QUOTES = [
     ("Simplicity is prerequisite for reliability.", "Edsger W. Dijkstra"),
@@ -218,6 +221,32 @@ class Terminal:
         self.clock += 0.7
         self.y += 26 + rows * LINE_HEIGHT
 
+    def stack(self, groups):
+        small = CHIP_SIZE * 0.6
+        legend_width = sum(18 + len(name) * small + 18 for name in groups) - 18
+        x, y = WIDTH - PAD - legend_width, self.y - LINE_HEIGHT
+        for name in groups:
+            self.parts.append(
+                f'<g opacity="0">{fade_in(self.clock)}<circle cx="{x + 4:.1f}" cy="{y - 4.5}" r="3.5" fill="{self.t["groups"][name]}"/>'
+                f'<text x="{x + 14:.1f}" y="{y}" fill="{self.t["muted"]}" style="font-size:{CHIP_SIZE}px">{name}</text></g>'
+            )
+            x += 18 + len(name) * small + 18
+
+        x, top = PAD, self.y - SIZE
+        for i, (group, tool) in enumerate((g, t) for g, tools in groups.items() for t in tools):
+            width = 34 + len(tool) * small
+            if x + width > WIDTH - PAD:
+                x, top = PAD, top + CHIP_HEIGHT + CHIP_GAP
+            self.parts.append(
+                f'<g opacity="0">{fade_in(self.clock + i * 0.02, 0.15)}'
+                f'<rect x="{x:.1f}" y="{top}" width="{width:.1f}" height="{CHIP_HEIGHT}" rx="{CHIP_HEIGHT / 2}" fill="{self.t["track"]}" stroke="{self.t["border"]}"/>'
+                f'<circle cx="{x + 13:.1f}" cy="{top + CHIP_HEIGHT / 2}" r="3.5" fill="{self.t["groups"][group]}"/>'
+                f'<text x="{x + 23:.1f}" y="{top + CHIP_HEIGHT / 2 + CHIP_SIZE * 0.35:.1f}" fill="{self.t["soft"]}" style="font-size:{CHIP_SIZE}px">{escape(tool)}</text></g>'
+            )
+            x += width + CHIP_GAP
+        self.clock += 0.5
+        self.y = top + CHIP_HEIGHT + SIZE + 10
+
     def checks(self, labels):
         x = PAD
         for label in labels:
@@ -268,8 +297,7 @@ def render(stats, theme, synced):
     term.output(("soft", "the APIs behind them, and the pipelines that ship them."))
     term.gap()
     term.command("ls ~/stack")
-    for folder, tools in STACK:
-        term.output(("accent", folder.ljust(12)), ("soft", tools))
+    term.stack(STACK)
     term.gap()
     term.command("git activity")
     term.heatmap(stats["weeks"])

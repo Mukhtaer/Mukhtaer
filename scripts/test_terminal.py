@@ -81,7 +81,7 @@ class RenderTest(unittest.TestCase):
             self.assertIn(escape(stats["quote"][1]), svg)
             self.assertNotIn("\u2014", svg)
             self.assertIn("font/woff2;base64,", svg)
-            self.assertLess(svg.index("web/"), svg.index("mobile/"))
+            self.assertLess(svg.index(">next.js<"), svg.index(">flutter<"))
             self.assertIn("python", svg)
             self.assertLess(max(float(b) for b in re.findall(r'begin="([\d.]+)s"', svg)), 6)
             for dropped in ("node", "express", "mongodb"):
