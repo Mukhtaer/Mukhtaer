@@ -104,7 +104,7 @@ def longest_streak(days):
     return best
 
 
-def top_languages(repositories, limit=6):
+def top_languages(repositories, limit=8):
     sizes, colors = Counter(), {}
     for repo in repositories:
         for edge in repo["languages"]["edges"]:
@@ -141,7 +141,7 @@ def font_faces():
     return "\n    ".join(faces)
 
 
-def fade_in(begin, duration=0.25):
+def fade_in(begin, duration=0.2):
     return f'<animate attributeName="opacity" from="0" to="1" begin="{begin:.2f}s" dur="{duration}s" fill="freeze"/>'
 
 
@@ -149,12 +149,12 @@ class Terminal:
     def __init__(self, theme):
         self.t = theme
         self.defs, self.parts = [], []
-        self.y, self.clock = TOP, 0.5
+        self.y, self.clock = TOP, 0.3
 
     def command(self, text):
         text = f"$ {text}"
         clip_id = f"c{len(self.defs)}"
-        duration = 0.035 * len(text)
+        duration = 0.02 * len(text)
         widths = ";".join(str(i * CHAR) for i in range(len(text))) + f";{len(text) * CHAR + SIZE}"
         self.defs.append(
             f'<clipPath id="{clip_id}"><rect x="{PAD}" y="{self.y - SIZE}" height="{SIZE * 1.6}" width="0">'
@@ -165,7 +165,7 @@ class Terminal:
             f'<text x="{PAD}" y="{self.y}" clip-path="url(#{clip_id})"><tspan fill="{self.t["prompt"]}">$</tspan>'
             f'<tspan fill="{self.t["text"]}" font-weight="600">{escape(text[1:])}</tspan></text>'
         )
-        self.clock += duration + 0.25
+        self.clock += duration + 0.1
         self.y += LINE_HEIGHT
 
     def output(self, *spans):
@@ -174,7 +174,7 @@ class Terminal:
             for color, text, *strong in spans
         )
         self.parts.append(f'<text x="{PAD}" y="{self.y}" opacity="0" xml:space="preserve">{content}{fade_in(self.clock)}</text>')
-        self.clock += 0.12
+        self.clock += 0.05
         self.y += LINE_HEIGHT
 
     def gap(self):
@@ -188,15 +188,15 @@ class Terminal:
                 f'<rect x="{x}" y="{top + row * (CELL + CELL_GAP)}" width="{CELL}" height="{CELL}" rx="2.5" fill="{self.t["levels"][level]}"/>'
                 for row, level in enumerate(week)
             )
-            self.parts.append(f'<g opacity="0">{cells}{fade_in(self.clock + col * 0.02, 0.2)}</g>')
-        self.clock += len(weeks) * 0.02 + 0.2
+            self.parts.append(f'<g opacity="0">{cells}{fade_in(self.clock + col * 0.008, 0.15)}</g>')
+        self.clock += len(weeks) * 0.008 + 0.1
         self.y += 7 * (CELL + CELL_GAP) + 16
 
     def languages(self, languages):
         width, top, clip_id = WIDTH - 2 * PAD, self.y - 12, f"c{len(self.defs)}"
         self.defs.append(
             f'<clipPath id="{clip_id}"><rect x="{PAD}" y="{top}" height="8" rx="4" width="0">'
-            f'<animate attributeName="width" from="0" to="{width}" begin="{self.clock:.2f}s" dur="1s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".2 .7 .2 1"/>'
+            f'<animate attributeName="width" from="0" to="{width}" begin="{self.clock:.2f}s" dur="0.6s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".2 .7 .2 1"/>'
             f"</rect></clipPath>"
         )
         x, segments = PAD, []
@@ -210,24 +210,24 @@ class Terminal:
             col, row = divmod(i, rows)
             x, y = PAD + col * 330, self.y + 26 + row * LINE_HEIGHT
             self.parts.append(
-                f'<g opacity="0">{fade_in(self.clock + 0.4 + i * 0.08)}'
+                f'<g opacity="0">{fade_in(self.clock + 0.2 + i * 0.04)}'
                 f'<circle cx="{x + 5}" cy="{y - 5}" r="5" fill="{color or self.t["muted"]}"/>'
                 f'<text x="{x + 20}" y="{y}" xml:space="preserve"><tspan fill="{self.t["soft"]}">{escape(name)}</tspan>'
                 f'<tspan fill="{self.t["muted"]}">  {share:.2%}</tspan></text></g>'
             )
-        self.clock += 1.4
+        self.clock += 0.7
         self.y += 26 + rows * LINE_HEIGHT
 
     def checks(self, labels):
         x = PAD
         for label in labels:
-            self.clock += 0.35
+            self.clock += 0.15
             self.parts.append(
                 f'<text x="{x}" y="{self.y}" opacity="0"><tspan fill="{self.t["accent"]}">✓</tspan>'
                 f'<tspan fill="{self.t["soft"]}"> {label}</tspan>{fade_in(self.clock, 0.15)}</text>'
             )
             x += (len(label) + 5) * CHAR
-        self.clock += 0.3
+        self.clock += 0.1
         self.y += LINE_HEIGHT
 
     def prompt(self):

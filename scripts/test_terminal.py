@@ -1,3 +1,4 @@
+import re
 import unittest
 import xml.etree.ElementTree as ET
 from datetime import date
@@ -41,6 +42,10 @@ class LanguagesTest(unittest.TestCase):
         self.assertEqual([name for name, _, _ in result], ["A", "B"])
         self.assertAlmostEqual(sum(share for _, _, share in result), 1.0)
 
+    def test_shows_top_eight_by_default(self):
+        result = top_languages([repo(*((f"L{i}", 10 - i) for i in range(9)))])
+        self.assertEqual([name for name, _, _ in result], [f"L{i}" for i in range(8)])
+
     def test_no_languages(self):
         self.assertEqual(top_languages([repo()]), [])
 
@@ -78,6 +83,7 @@ class RenderTest(unittest.TestCase):
             self.assertIn("font/woff2;base64,", svg)
             self.assertLess(svg.index("web/"), svg.index("mobile/"))
             self.assertIn("python", svg)
+            self.assertLess(max(float(b) for b in re.findall(r'begin="([\d.]+)s"', svg)), 6)
             for dropped in ("node", "express", "mongodb"):
                 self.assertNotIn(dropped, svg)
 
