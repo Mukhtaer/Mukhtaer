@@ -51,7 +51,7 @@ CELL, CELL_GAP = 10, 3
 STACK = [
     ("web/", "next.js  react  typescript  tailwind"),
     ("mobile/", "flutter  dart  firebase"),
-    ("backend/", "laravel  php  livewire  rest"),
+    ("backend/", "laravel  php  python  livewire  rest"),
     ("data/", "mysql  postgresql"),
     ("delivery/", "docker  github-actions  linux  nginx"),
 ]

@@ -77,6 +77,7 @@ class RenderTest(unittest.TestCase):
             self.assertNotIn("\u2014", svg)
             self.assertIn("font/woff2;base64,", svg)
             self.assertLess(svg.index("web/"), svg.index("mobile/"))
+            self.assertIn("python", svg)
             for dropped in ("node", "express", "mongodb"):
                 self.assertNotIn(dropped, svg)
 
