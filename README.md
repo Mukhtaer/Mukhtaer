@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://mukhtarsani.vercel.app"><code>portfolio</code></a> &nbsp;
+  <a href="https://mukhtarsani.dev"><code>https://mukhtarsani.dev</code></a> &nbsp;
   <a href="mailto:mukhtaar.abdulkarim@gmail.com"><code>email</code></a> &nbsp;
   <a href="https://www.linkedin.com/in/mukhtarsani"><code>linkedin</code></a> &nbsp;
   <a href="https://x.com/MukhtaarAbdul"><code>x</code></a>
